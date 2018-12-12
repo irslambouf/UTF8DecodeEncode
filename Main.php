@@ -76,6 +76,7 @@ if ($in_handle != false) {
 
         $proper_utf8 = Encoding::toUTF8($line);
         $test_utf8 = Encoding::fixUTF8($proper_utf8);
+        $test_utf8_2 = Encoding::fixUTF8($line);
 
         echo "Re-encoded: ";
         echo $proper_utf8;
@@ -84,6 +85,8 @@ if ($in_handle != false) {
         fwrite($out_handle, $proper_utf8);
         fwrite($out_handle, "\n");
         fwrite($out_handle, $test_utf8);
+        fwrite($out_handle, "\n");
+        fwrite($out_handle, $test_utf8_2);
     }
 
     if (!fclose($in_handle)){
